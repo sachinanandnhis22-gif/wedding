@@ -1,0 +1,932 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ratnaveni &amp; Pradeep - May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#fdf8f2;
+  --champagne:#f6ecde;
+  --blush:#f0d7cd;
+  --rose:#c47a65;
+  --wine:#8a4250;
+  --gold:#bc8f3e;
+  --sepia:#5a3a2e;
+  --ink:#2f1a13;
+  --muted:#7e5a4a;
+  --line:rgba(90,58,46,0.18);
+  --card:rgba(255,255,255,0.68);
+  --lift:0 20px 50px rgba(90,58,46,0.13);
+  --ease-standard:cubic-bezier(0.4,0,0.2,1);
+  --dur-fast:180ms;
+  --dur-mid:260ms;
+}
+*,:before,:after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 3%,rgba(255,244,234,0.95),transparent 28%),
+    radial-gradient(circle at 87% 12%,rgba(240,215,205,0.55),transparent 35%),
+    linear-gradient(160deg,#fffaf4 0%,#fdf6ee 45%,#f9efe3 100%);
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+.section{padding:98px 0;position:relative;}
+.wrap{width:min(1100px,92vw);margin:0 auto;}
+.eyebrow{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.3em;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(34px,5vw,64px);
+  line-height:1.08;
+  font-weight:500;
+  color:var(--sepia);
+}
+.divider{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:22px;
+}
+.divider-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);width:120px;}
+.divider-dot{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
+
+nav{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px min(4vw,48px);
+  transition:all .35s ease;
+}
+nav.scrolled{
+  background:rgba(252,245,236,0.82);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(90,58,46,0.08);
+}
+.nav-brand{
+  font-family:'Playfair Display',serif;
+  color:#fff;
+  text-decoration:none;
+  font-size:26px;
+  font-style:italic;
+}
+nav.scrolled .nav-brand{color:var(--sepia);}
+.nav-links{display:flex;list-style:none;gap:30px;}
+.nav-links a{
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.23em;
+  font-size:10px;
+  color:rgba(255,255,255,.78);
+  transition:color .2s ease;
+}
+nav.scrolled .nav-links a{color:var(--muted);}
+.nav-links a:hover{color:var(--wine);}
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:grid;
+  align-items:end;
+  overflow:hidden;
+  padding:0 0 44px;
+  background:
+    radial-gradient(ellipse 72% 58% at 50% 0%,rgba(255,220,205,0.53) 0%,transparent 70%),
+    linear-gradient(145deg,#cf8e7f 0%,#bf7368 45%,#9a5c5a 100%);
+}
+.hero::before,
+.hero::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  filter:blur(1px);
+  pointer-events:none;
+}
+.hero::before{
+  width:500px;
+  height:500px;
+  top:-190px;
+  left:-160px;
+  background:radial-gradient(circle,rgba(255,238,224,.67),rgba(255,238,224,0));
+  animation:drift 11s ease-in-out infinite alternate;
+}
+.hero::after{
+  width:420px;
+  height:420px;
+  right:-100px;
+  bottom:-180px;
+  background:radial-gradient(circle,rgba(250,197,170,.38),rgba(250,197,170,0));
+  animation:drift 10s ease-in-out infinite alternate-reverse;
+}
+.hero-grid{
+  width:min(1150px,92vw);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:end;
+  gap:38px;
+  position:relative;
+  z-index:2;
+}
+.hero-copy{color:#fff;padding-bottom:18px;}
+.hero-tag{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.26em;
+  color:rgba(255,255,255,.78);
+  margin-bottom:14px;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(58px,8.2vw,118px);
+  line-height:.9;
+  font-weight:500;
+  text-shadow:0 8px 22px rgba(50,24,21,0.2);
+}
+.hero-amp{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:40px;
+  color:rgba(255,255,255,.74);
+  margin:4px 0;
+}
+.hero-meta{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  color:rgba(255,255,255,.86);
+  font-size:13px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:10px;}
+.hero-meta span::before{content:'';width:6px;height:6px;transform:rotate(45deg);background:rgba(255,255,255,.6);}
+
+.hero-photo{
+  position:relative;
+  background:linear-gradient(170deg,rgba(255,250,246,.92),rgba(247,230,219,.72));
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:28px;
+  box-shadow:var(--lift);
+  padding:14px;
+  transform:translateY(12px);
+}
+.hero-photo-inner{
+  border-radius:18px;
+  border:1px dashed rgba(138,66,80,.32);
+  min-height:390px;
+  background:
+    radial-gradient(circle at 20% 25%,rgba(251,235,224,.9),transparent 35%),
+    radial-gradient(circle at 82% 70%,rgba(237,202,187,.72),transparent 35%),
+    linear-gradient(160deg,#fef4ea 0%,#f6e6d7 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+.hero-photo-inner svg{width:38px;height:38px;opacity:.42;color:var(--wine);}
+.hero-photo-inner p{
+  margin-top:12px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  color:var(--wine);
+  font-style:italic;
+}
+.hero-photo-tip{
+  margin-top:10px;
+  font-size:10px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.hero-scroll{
+  position:absolute;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  color:rgba(255,255,255,.58);
+  font-size:10px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+.hero-scroll i{
+  display:block;
+  width:1px;
+  height:36px;
+  margin:9px auto 0;
+  background:rgba(255,255,255,.4);
+  overflow:hidden;
+  position:relative;
+}
+.hero-scroll i::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:#fff;
+  animation:scan 1.8s ease infinite;
+}
+
+.s-blessing{background:linear-gradient(180deg,#fdf7ef 0%,#f9efe4 100%);text-align:center;}
+.blessing-card{
+  width:min(850px,100%);
+  margin:0 auto;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:52px 36px;
+  background:var(--card);
+  backdrop-filter:blur(4px);
+}
+.blessing-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(26px,3.2vw,44px);
+  color:var(--sepia);
+  line-height:1.38;
+  font-style:italic;
+}
+.blessing-by{
+  margin-top:22px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:11px;
+  color:var(--muted);
+}
+
+.s-events{
+  background:
+    radial-gradient(circle at 95% 5%,rgba(244,217,199,.35),transparent 33%),
+    linear-gradient(180deg,#fffaf4 0%,#f8ebe0 100%);
+}
+.events-head{max-width:620px;}
+.events-sub{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+.events-timeline{
+  margin-top:44px;
+  position:relative;
+  display:grid;
+  gap:28px;
+}
+.events-timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:linear-gradient(180deg,transparent,var(--gold),var(--gold),transparent);
+  transform:translateX(-50%);
+}
+.timeline-item{
+  display:grid;
+  grid-template-columns:1fr 88px 1fr;
+  align-items:center;
+  gap:20px;
+}
+.timeline-item:nth-child(odd) .timeline-card{grid-column:1;}
+.timeline-item:nth-child(odd) .timeline-card{justify-self:end;}
+.timeline-item:nth-child(even) .timeline-card{grid-column:3;}
+.timeline-node{
+  grid-column:2;
+  width:88px;
+  height:88px;
+  border-radius:50%;
+  border:1px solid rgba(188,143,62,.48);
+  background:radial-gradient(circle,#fff7ea 0%,#f3dfcd 100%);
+  display:grid;
+  place-items:center;
+  position:relative;
+  z-index:2;
+  box-shadow:0 8px 24px rgba(90,58,46,0.16);
+}
+.timeline-node strong{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  color:var(--wine);
+  font-weight:500;
+}
+.timeline-card{
+  width:min(460px,100%);
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:var(--lift);
+  transition:transform var(--dur-mid) var(--ease-standard),box-shadow var(--dur-mid) var(--ease-standard),border-color var(--dur-mid) var(--ease-standard);
+}
+.timeline-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(90,58,46,0.18);}
+.timeline-card:active{transform:translateY(-2px);}
+.timeline-card.is-open{
+  border-color:rgba(138,66,80,0.36);
+  box-shadow:0 24px 52px rgba(90,58,46,0.2);
+}
+.event-visual{
+  min-height:155px;
+  padding:20px;
+  display:flex;
+  align-items:flex-end;
+  position:relative;
+  isolation:isolate;
+}
+.event-visual::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 22% 26%,rgba(255,255,255,.46),transparent 45%);
+  z-index:-1;
+}
+.ev-haldi{background:linear-gradient(130deg,#fbe8b8 0%,#f5cf76 48%,#d89d38 100%);}
+.ev-wedding{background:linear-gradient(130deg,#f2d6de 0%,#d89cb0 52%,#ab6279 100%);}
+.ev-reception{background:linear-gradient(130deg,#f8d9cd 0%,#e4a494 52%,#bf6b71 100%);}
+.ev-token{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  letter-spacing:0.04em;
+  color:rgba(90,58,46,0.84);
+  background:rgba(255,255,255,0.58);
+  border:1px solid rgba(255,255,255,0.7);
+  border-radius:999px;
+  padding:8px 14px;
+}
+.event-label{
+  margin-left:auto;
+  background:rgba(255,255,255,.68);
+  border:1px solid rgba(255,255,255,.85);
+  border-radius:999px;
+  padding:8px 14px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--wine);
+}
+.event-body{padding:22px 24px 24px;}
+.event-name{
+  font-family:'Playfair Display',serif;
+  font-size:35px;
+  color:var(--sepia);
+  font-weight:500;
+  margin-bottom:6px;
+}
+.event-meta{
+  display:grid;
+  gap:8px;
+  margin-top:14px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+.event-meta strong{color:var(--ink);font-weight:500;}
+.timeline-toggle{
+  margin-top:14px;
+  width:100%;
+  border:1px solid rgba(90,58,46,0.16);
+  border-radius:12px;
+  background:rgba(246,236,222,0.62);
+  color:var(--sepia);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 14px;
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background var(--dur-fast) var(--ease-standard),border-color var(--dur-fast) var(--ease-standard),transform var(--dur-fast) var(--ease-standard);
+}
+.timeline-toggle:hover{background:rgba(240,215,205,0.64);}
+.timeline-toggle:active{transform:translateY(1px);}
+.timeline-toggle:focus-visible{
+  outline:2px solid var(--wine);
+  outline-offset:2px;
+}
+.toggle-icon{
+  width:9px;
+  height:9px;
+  border-right:2px solid var(--wine);
+  border-bottom:2px solid var(--wine);
+  transform:rotate(45deg);
+  transition:transform var(--dur-fast) var(--ease-standard);
+  flex-shrink:0;
+}
+.timeline-card.is-open .toggle-icon{transform:rotate(225deg);}
+.event-extra{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  margin-top:0;
+  padding-top:0;
+  border-top:0 solid transparent;
+  transition:max-height var(--dur-mid) var(--ease-standard),opacity var(--dur-mid) var(--ease-standard),margin-top var(--dur-mid) var(--ease-standard),padding-top var(--dur-mid) var(--ease-standard),border-color var(--dur-mid) var(--ease-standard);
+}
+.timeline-card.is-open .event-extra{
+  max-height:180px;
+  opacity:1;
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid rgba(90,58,46,0.14);
+}
+.event-extra p{
+  font-size:13px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.s-countdown{
+  background:
+    radial-gradient(circle at 8% 0%,rgba(252,233,219,.6),transparent 33%),
+    linear-gradient(180deg,#f8e8de 0%,#f3ddcf 100%);
+  text-align:center;
+}
+.cd-label{font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--wine);}
+.cd-title{
+  margin-top:12px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(34px,4.8vw,62px);
+  color:var(--sepia);
+  font-weight:500;
+}
+.cd-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.cd-unit{
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(90,58,46,.16);
+  border-radius:16px;
+  padding:16px 8px;
+}
+.cd-n{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,58px);line-height:1;color:var(--sepia);}
+.cd-l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:8px;}
+.cd-done{
+  grid-column:1/-1;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  color:var(--wine);
+  font-size:32px;
+}
+
+.s-venue{background:#fffdf9;}
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;margin-top:36px;}
+.map-wrap,
+.venue-card{
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 12px 34px rgba(90,58,46,.09);
+}
+.map-wrap iframe{width:100%;height:100%;min-height:370px;border:0;display:block;}
+.venue-card{padding:28px;}
+.venue-name{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  color:var(--sepia);
+  line-height:1.1;
+}
+.venue-addr{margin-top:8px;color:var(--muted);line-height:1.7;font-size:15px;}
+.sched{list-style:none;margin-top:20px;display:grid;gap:10px;}
+.sched li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:12px 0;
+  border-top:1px solid rgba(90,58,46,.1);
+}
+.sched-dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.dot-h{background:#d89d38;}
+.dot-w{background:#ab6279;}
+.dot-r{background:#bf6b71;}
+.sched-info strong{display:block;color:var(--ink);font-weight:500;margin-bottom:2px;}
+.sched-info span{color:var(--muted);}
+.dir-btn{
+  margin-top:18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:10px;
+  padding:14px 20px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(120deg,#8a4250 0%,#5a3a2e 100%);
+}
+
+.s-gallery{background:linear-gradient(180deg,#fdf7ef 0%,#f8ebdf 100%);}
+.gal-sub{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:17px;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+}
+.gal-grid{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.gal-item{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(90,58,46,.14);
+  background:#fff;
+  position:relative;
+  min-height:220px;
+  box-shadow:0 16px 34px rgba(90,58,46,.1);
+}
+.gal-item:nth-child(3n+1){min-height:280px;}
+.gal-item:nth-child(3n+2){min-height:220px;}
+.gal-item:nth-child(3n+3){min-height:250px;}
+.gal-ph{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  text-align:center;
+  background:
+    linear-gradient(150deg,rgba(249,232,219,.95),rgba(242,213,200,.85)),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0,rgba(255,255,255,.35) 12px,rgba(255,255,255,.1) 12px,rgba(255,255,255,.1) 24px);
+}
+.gal-ph svg{width:28px;height:28px;color:var(--wine);opacity:.45;}
+.gal-ph p{margin-top:8px;color:var(--wine);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;}
+.gal-overlay{
+  position:absolute;
+  inset:auto 0 0 0;
+  padding:12px 14px;
+  background:linear-gradient(180deg,transparent,rgba(74,33,27,.58));
+}
+.gal-overlay span{color:rgba(255,250,245,.94);font-size:16px;font-family:'Cormorant Garamond',serif;font-style:italic;}
+
+footer{
+  padding:98px 0 64px;
+  text-align:center;
+  background:linear-gradient(170deg,#eec8bb 0%,#dba89b 55%,#b97f77 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+footer::before{
+  content:'';
+  position:absolute;
+  inset:-40% -30% auto;
+  height:500px;
+  background:radial-gradient(circle at 50% 20%,rgba(255,238,228,.45),transparent 62%);
+}
+.ft-names{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,6.2vw,82px);
+  font-weight:500;
+  line-height:.95;
+  position:relative;
+}
+.ft-amp{font-family:'Cormorant Garamond',serif;font-style:italic;opacity:.78;}
+.ft-msg{
+  margin:22px auto 0;
+  max-width:760px;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:26px;
+  line-height:1.5;
+  color:rgba(255,248,242,.92);
+  position:relative;
+}
+.ft-date{
+  margin-top:24px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:rgba(255,245,236,.84);
+  position:relative;
+}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;}
+.rv.in{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}
+.d2{transition-delay:.2s;}
+.d3{transition-delay:.3s;}
+
+@keyframes drift{
+  from{transform:translateY(0) translateX(0);}
+  to{transform:translateY(20px) translateX(-24px);}
+}
+@keyframes scan{
+  from{transform:translateY(-120%);}
+  to{transform:translateY(220%);}
+}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:18px;padding-bottom:16px;}
+  .hero-copy{order:2;text-align:center;}
+  .hero-meta{justify-content:center;}
+  .hero-photo{max-width:540px;margin:0 auto;}
+  .events-timeline::before{left:36px;}
+  .timeline-item{grid-template-columns:72px 1fr;gap:14px;}
+  .timeline-node{grid-column:1;width:72px;height:72px;}
+  .timeline-card,
+  .timeline-item:nth-child(odd) .timeline-card,
+  .timeline-item:nth-child(even) .timeline-card{
+    grid-column:2;
+    justify-self:stretch;
+  }
+  .venue-grid{grid-template-columns:1fr;}
+  .map-wrap iframe{min-height:320px;}
+  .gal-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:640px){
+  .section{padding:78px 0;}
+  .nav-links{display:none;}
+  .hero-title{font-size:clamp(48px,16vw,72px);}
+  .hero-amp{font-size:30px;}
+  .hero-photo-inner{min-height:320px;}
+  .blessing-card{padding:38px 20px;}
+  .blessing-text{font-size:31px;}
+  .cd-grid{grid-template-columns:repeat(2,1fr);}
+  .gal-grid{grid-template-columns:1fr;}
+  .ft-msg{font-size:22px;padding:0 16px;}
+  .event-name{font-size:30px;}
+  .event-meta{font-size:13px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="#top" class="nav-brand">R &amp; P</a>
+  <ul class="nav-links">
+    <li><a href="#events">Events</a></li>
+    <li><a href="#venue">Venue</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy rv in">
+      <p class="hero-tag">Together with their families</p>
+      <h1 class="hero-title">Ratnaveni</h1>
+      <p class="hero-amp">&amp;</p>
+      <h1 class="hero-title">Pradeep</h1>
+      <div class="hero-meta">
+        <span>2nd and 3rd May 2026</span>
+        <span>Nigudgi Function Hall, Kalaburagi</span>
+      </div>
+    </div>
+
+    <div class="hero-photo rv d1 in">
+      <div class="hero-photo-inner">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="15" y="7" width="4" height="3" rx="0.8" stroke="currentColor" stroke-width="0.9"/>
+        </svg>
+        <p>Your portrait will shine here</p>
+        <div class="hero-photo-tip">Replace with a couple photo 3:4 ratio</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll<i aria-hidden="true"></i></div>
+</section>
+
+<section class="section s-blessing" id="blessing">
+  <div class="wrap">
+    <div class="blessing-card rv">
+      <p class="blessing-text">
+        "May your love be as warm as sunrise, as eternal as starlight, and as joyful as this sacred celebration."
+      </p>
+      <p class="blessing-by">With love and blessings from both families</p>
+    </div>
+  </div>
+</section>
+
+<section class="section s-events" id="events">
+  <div class="wrap">
+    <div class="events-head rv">
+      <p class="eyebrow">Wedding Celebrations</p>
+      <h2 class="section-title">Every event, one unforgettable story</h2>
+      <p class="events-sub">From warm haldi moments to sacred vows and joyful reception, we invite you to celebrate each chapter with us.</p>
+      <div class="divider" aria-hidden="true">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+      </div>
+    </div>
+
+    <div class="events-timeline">
+      <article class="timeline-item rv d1">
+        <div class="timeline-card" data-event-card>
+          <div class="event-visual ev-haldi">
+            <div class="ev-token" aria-hidden="true">Haldi</div>
+            <span class="event-label">Evening Celebration</span>
+          </div>
+          <div class="event-body">
+            <h3 class="event-name">Haldi</h3>
+            <div class="event-meta">
+              <p><strong>Date:</strong> Friday, 2nd May 2026</p>
+              <p><strong>Time:</strong> 7:00 PM onwards</p>
+              <p><strong>Venue:</strong> Nigudgi Function Hall, Kalaburagi</p>
+            </div>
+            <button class="timeline-toggle" type="button" aria-expanded="false" aria-controls="event-haldi-details">
+              Tap to view details
+              <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="event-extra" id="event-haldi-details">
+              <p>Please arrive 20 minutes early so family rituals can begin on time. Traditional yellow or warm festive tones are perfect for this evening.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-node" aria-hidden="true"><strong>01</strong></div>
+      </article>
+
+      <article class="timeline-item rv d2">
+        <div class="timeline-node" aria-hidden="true"><strong>02</strong></div>
+        <div class="timeline-card" data-event-card>
+          <div class="event-visual ev-wedding">
+            <div class="ev-token" aria-hidden="true">Vows</div>
+            <span class="event-label">Morning Ceremony</span>
+          </div>
+          <div class="event-body">
+            <h3 class="event-name">Wedding</h3>
+            <div class="event-meta">
+              <p><strong>Date:</strong> Saturday, 3rd May 2026</p>
+              <p><strong>Time:</strong> 8:00 AM onwards</p>
+              <p><strong>Venue:</strong> Nigudgi Function Hall, Kalaburagi</p>
+            </div>
+            <button class="timeline-toggle" type="button" aria-expanded="false" aria-controls="event-wedding-details">
+              Tap to view details
+              <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="event-extra" id="event-wedding-details">
+              <p>The main ceremony starts in the morning with blessings and sacred rituals. Kindly keep your phone on silent during the vows and prayer moments.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item rv d3">
+        <div class="timeline-card" data-event-card>
+          <div class="event-visual ev-reception">
+            <div class="ev-token" aria-hidden="true">Cheers</div>
+            <span class="event-label">Afternoon Celebration</span>
+          </div>
+          <div class="event-body">
+            <h3 class="event-name">Reception</h3>
+            <div class="event-meta">
+              <p><strong>Date:</strong> Saturday, 3rd May 2026</p>
+              <p><strong>Time:</strong> 12:30 PM onwards</p>
+              <p><strong>Venue:</strong> Nigudgi Function Hall, Kalaburagi</p>
+            </div>
+            <button class="timeline-toggle" type="button" aria-expanded="false" aria-controls="event-reception-details">
+              Tap to view details
+              <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="event-extra" id="event-reception-details">
+              <p>Join us for lunch, blessings, and celebration portraits. This is the best time for family photos and relaxed conversations with the couple.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-node" aria-hidden="true"><strong>03</strong></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section s-countdown" id="countdown">
+  <div class="wrap rv">
+    <p class="cd-label">The big day</p>
+    <h2 class="cd-title">Counting down to forever</h2>
+    <div class="cd-grid" id="cdRow">
+      <div class="cd-unit"><span class="cd-n" id="cdD">00</span><div class="cd-l">Days</div></div>
+      <div class="cd-unit"><span class="cd-n" id="cdH">00</span><div class="cd-l">Hours</div></div>
+      <div class="cd-unit"><span class="cd-n" id="cdM">00</span><div class="cd-l">Mins</div></div>
+      <div class="cd-unit"><span class="cd-n" id="cdS">00</span><div class="cd-l">Secs</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section s-venue" id="venue">
+  <div class="wrap rv">
+    <p class="eyebrow">Where It Happens</p>
+    <h2 class="section-title">Find your way to us</h2>
+    <div class="venue-grid">
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=17.367641,76.803425&z=15&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Nigudgi Function Hall, Kalaburagi"></iframe>
+      </div>
+      <div class="venue-card">
+        <p class="venue-name">Nigudgi Function Hall</p>
+        <p class="venue-addr">Nigudgi, Kalaburagi<br>Karnataka, India</p>
+        <ul class="sched">
+          <li><span class="sched-dot dot-h"></span><div class="sched-info"><strong>Haldi</strong><span>Friday, 2nd May 2026 · 7:00 PM</span></div></li>
+          <li><span class="sched-dot dot-w"></span><div class="sched-info"><strong>Wedding</strong><span>Saturday, 3rd May 2026 · 8:00 AM</span></div></li>
+          <li><span class="sched-dot dot-r"></span><div class="sched-info"><strong>Reception</strong><span>Saturday, 3rd May 2026 · 12:30 PM</span></div></li>
+        </ul>
+        <a class="dir-btn" href="https://maps.app.goo.gl/q7aTXb2jDeiaULNm7" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section s-gallery" id="gallery">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Moments</p>
+      <h2 class="section-title">A glimpse of us</h2>
+      <p class="gal-sub">Premium placeholders ready for your final photos</p>
+    </div>
+    <div class="gal-grid rv d1">
+      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Together</p></div></div><div class="gal-overlay"><span>Golden Hour</span></div></div>
+      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Forever</p></div></div><div class="gal-overlay"><span>Engagement Bliss</span></div></div>
+      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Always</p></div></div><div class="gal-overlay"><span>Our Promise</span></div></div>
+      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Joy</p></div></div><div class="gal-overlay"><span>Warm Smiles</span></div></div>
+      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Love</p></div></div><div class="gal-overlay"><span>Heart Notes</span></div></div>
+      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Story</p></div></div><div class="gal-overlay"><span>New Chapter</span></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="ft-names rv">Ratnaveni <span class="ft-amp">&amp;</span> Pradeep</p>
+    <p class="ft-msg rv d1">With gratitude and joy, we look forward to celebrating our beginning with the people who mean the most to us.</p>
+    <p class="ft-date rv d2">2nd and 3rd May 2026 · Nigudgi Function Hall, Kalaburagi</p>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive: true});
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('in');
+  });
+}, {threshold: 0.14});
+document.querySelectorAll('.rv').forEach((el) => obs.observe(el));
+
+document.querySelectorAll('[data-event-card]').forEach((card) => {
+  const toggle = card.querySelector('.timeline-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    const isOpening = !card.classList.contains('is-open');
+    document.querySelectorAll('[data-event-card].is-open').forEach((openCard) => {
+      openCard.classList.remove('is-open');
+      const openToggle = openCard.querySelector('.timeline-toggle');
+      if (openToggle) openToggle.setAttribute('aria-expanded', 'false');
+    });
+    if (isOpening) {
+      card.classList.add('is-open');
+    }
+    const isOpen = card.classList.contains('is-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
+
+const TARGET = new Date('2026-05-03T08:00:00+05:30');
+const pad = (n) => String(Math.max(0, Math.floor(n))).padStart(2, '0');
+function tick() {
+  const diff = TARGET - Date.now();
+  if (diff <= 0) {
+    document.getElementById('cdRow').innerHTML = '<p class="cd-done">The celebration has begun</p>';
+    return;
+  }
+  document.getElementById('cdD').textContent = pad(diff / 86400000);
+  document.getElementById('cdH').textContent = pad((diff % 86400000) / 3600000);
+  document.getElementById('cdM').textContent = pad((diff % 3600000) / 60000);
+  document.getElementById('cdS').textContent = pad((diff % 60000) / 1000);
+}
+tick();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
