@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ratnaveni &amp; Pradeep - May 2026</title>
+<title>Pradeep Babangol &amp; Ratnaveni Hede - May 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet">
@@ -157,6 +157,30 @@ nav.scrolled .nav-links a{color:var(--muted);}
   line-height:.9;
   font-weight:500;
   text-shadow:0 8px 22px rgba(50,24,21,0.2);
+  letter-spacing:0.05em;
+  font-style:italic;
+  text-transform:none;
+  background:linear-gradient(to right,#fff,#fffbf7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-title .first-name{
+  display:block;
+  font-size:1em;
+}
+.hero-title .last-name{
+  display:block;
+  margin-top:8px;
+  font-size:0.43em;
+  line-height:1.1;
+  letter-spacing:0.11em;
+  font-style:normal;
+  color:rgba(255,255,255,0.96);
+  -webkit-text-fill-color:rgba(255,255,255,0.96);
+  background:none;
+  -webkit-background-clip:initial;
+  background-clip:initial;
 }
 .hero-amp{
   font-family:'Cormorant Garamond',serif;
@@ -171,12 +195,20 @@ nav.scrolled .nav-links a{color:var(--muted);}
   flex-wrap:wrap;
   gap:18px;
   color:rgba(255,255,255,.86);
-  font-size:13px;
+  font-size:16px;
   letter-spacing:.09em;
   text-transform:uppercase;
 }
 .hero-meta span{display:inline-flex;align-items:center;gap:10px;}
 .hero-meta span::before{content:'';width:6px;height:6px;transform:rotate(45deg);background:rgba(255,255,255,.6);}
+.hero-meta .wedding-location{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(19px,2.7vw,34px);
+  font-weight:600;
+  letter-spacing:0.02em;
+  text-transform:none;
+  color:#fff;
+}
 
 /* ── HERO PHOTO: updated for real image ── */
 .hero-photo{
@@ -689,7 +721,7 @@ footer::before{
 </head>
 <body>
 <nav id="nav">
-  <a href="#top" class="nav-brand">R &amp; P</a>
+  <a href="#top" class="nav-brand">P &amp; R</a>
   <ul class="nav-links">
     <li><a href="#events">Events</a></li>
     <li><a href="#venue">Venue</a></li>
@@ -701,12 +733,12 @@ footer::before{
   <div class="hero-grid">
     <div class="hero-copy rv in">
       <p class="hero-tag">Together with their families</p>
-      <h1 class="hero-title">Ratnaveni</h1>
+      <h1 class="hero-title"><span class="first-name">Pradeep</span><span class="last-name">Babangol</span></h1>
       <p class="hero-amp">&amp;</p>
-      <h1 class="hero-title">Pradeep</h1>
+      <h1 class="hero-title"><span class="first-name">Ratnaveni</span><span class="last-name">Hede</span></h1>
       <div class="hero-meta">
         <span>2nd and 3rd May 2026</span>
-        <span>Nigudgi Function Hall, Kalaburagi</span>
+        <span class="wedding-location">Nigudgi Function Hall, Kalaburagi</span>
       </div>
     </div>
 
@@ -882,7 +914,7 @@ footer::before{
 
 <footer>
   <div class="wrap">
-    <p class="ft-names rv">Ratnaveni <span class="ft-amp">&amp;</span> Pradeep</p>
+    <p class="ft-names rv">Pradeep <span class="ft-amp">&amp;</span> Ratnaveni</p>
     <p class="ft-msg rv d1">With gratitude and joy, we look forward to celebrating our beginning with the people who mean the most to us.</p>
     <p class="ft-date rv d2">2nd and 3rd May 2026 · Nigudgi Function Hall, Kalaburagi</p>
   </div>
