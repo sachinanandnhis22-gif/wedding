@@ -218,6 +218,7 @@ nav.scrolled .nav-links a{color:var(--muted);}
 /* ── HERO PHOTO: updated for real image ── */
 .hero-photo{
   position:relative;
+  margin-top:20px;
   border-radius:28px;
   overflow:hidden;
   box-shadow:0 28px 60px rgba(50,24,21,0.35),0 8px 20px rgba(50,24,21,0.2);
@@ -246,25 +247,6 @@ nav.scrolled .nav-links a{color:var(--muted);}
   background:linear-gradient(to bottom,transparent,rgba(100,50,40,0.28));
   pointer-events:none;
 }
-/* Photo name tag at bottom */
-.photo-caption{
-  position:absolute;
-  bottom:18px;
-  left:0;
-  right:0;
-  text-align:center;
-  z-index:2;
-  pointer-events:none;
-}
-.photo-caption span{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:18px;
-  color:rgba(255,248,242,0.92);
-  text-shadow:0 2px 8px rgba(40,20,15,0.5);
-  letter-spacing:0.06em;
-}
-
 .hero-scroll{
   position:absolute;
   bottom:16px;
@@ -682,7 +664,7 @@ footer::before{
   .hero-grid{grid-template-columns:1fr;gap:18px;padding-bottom:16px;}
   .hero-copy{order:2;text-align:center;}
   .hero-meta{justify-content:center;}
-  .hero-photo{max-width:480px;margin:0 auto;}
+  .hero-photo{max-width:480px;margin:20px auto 0;}
   .events-timeline::before{left:36px;}
   .timeline-item{grid-template-columns:72px 1fr;gap:14px;}
   .timeline-node{grid-column:1;width:72px;height:72px;}
@@ -703,7 +685,7 @@ footer::before{
   .hero-title{font-size:clamp(48px,16vw,72px);}
   .hero-amp{font-size:30px;}
   .hero-photo-inner{padding:0;}
-  .hero-photo{max-width:100%;}
+  .hero-photo{max-width:100%;margin:18px auto 0;}
   .blessing-card{padding:38px 20px;}
   .blessing-text{font-size:31px;}
   .cd-grid{grid-template-columns:repeat(2,1fr);}
@@ -732,9 +714,9 @@ footer::before{
   <div class="hero-grid">
     <div class="hero-copy rv in">
       <p class="hero-tag">Together with their families</p>
-      <h1 class="hero-title"><span class="first-name">Pradeep</span><span class="last-name">Babangol</span></h1>
+      <h1 class="hero-title"><span class="first-name">Pradeep</span></h1>
       <p class="hero-amp">&amp;</p>
-      <h1 class="hero-title"><span class="first-name">Ratnaveni</span><span class="last-name">Hede</span></h1>
+      <h1 class="hero-title"><span class="first-name">Ratnaveni</span></h1>
       <div class="hero-meta">
         <span>2nd and 3rd May 2026</span>
         <span class="wedding-location">Nigudgi Function Hall, Kalaburagi</span>
@@ -744,7 +726,6 @@ footer::before{
     <div class="hero-photo rv d1 in">
       <div class="hero-photo-inner">
         <img src="couple.jpeg" alt="Ratnaveni and Pradeep" class="couple-photo">
-        <div class="photo-caption"><span>Ratnaveni &amp; Pradeep</span></div>
       </div>
     </div>
   </div>
@@ -779,7 +760,7 @@ footer::before{
       <article class="timeline-item rv d1">
         <div class="timeline-card" data-event-card>
           <div class="event-visual ev-reception">
-            <div class="ev-token" aria-hidden="true">Love</div>
+            <div class="ev-token" aria-hidden="true">Vows</div>
             <span class="event-label">Main Ceremony</span>
           </div>
           <div class="event-body">
@@ -874,7 +855,7 @@ footer::before{
 
 <footer>
   <div class="wrap">
-    <p class="ft-names rv">Pradeep <span class="ft-amp">&amp;</span> Ratnaveni</p>
+    <p class="ft-names rv">Pradeep Babangol <span class="ft-amp">&amp;</span> Ratnaveni Hede</p>
     <p class="ft-msg rv d1">With gratitude and joy, we look forward to celebrating our beginning with the people who mean the most to us.</p>
     <p class="ft-date rv d2">3rd May 2026 · Nigudgi Function Hall, Kalaburagi</p>
   </div>
