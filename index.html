@@ -335,47 +335,19 @@ nav.scrolled .nav-links a{color:var(--muted);}
   position:relative;
   display:grid;
   gap:28px;
-}
-.events-timeline::before{
-  content:'';
-  position:absolute;
-  left:50%;
-  top:8px;
-  bottom:8px;
-  width:1px;
-  background:linear-gradient(180deg,transparent,var(--gold),var(--gold),transparent);
-  transform:translateX(-50%);
+  justify-items:center;
 }
 .timeline-item{
   display:grid;
-  grid-template-columns:1fr 88px 1fr;
+  grid-template-columns:minmax(0,1fr);
   align-items:center;
-  gap:20px;
-}
-.timeline-item:nth-child(odd) .timeline-card{grid-column:1;}
-.timeline-item:nth-child(odd) .timeline-card{justify-self:end;}
-.timeline-item:nth-child(even) .timeline-card{grid-column:3;}
-.timeline-node{
-  grid-column:2;
-  width:88px;
-  height:88px;
-  border-radius:50%;
-  border:1px solid rgba(188,143,62,.48);
-  background:radial-gradient(circle,#fff7ea 0%,#f3dfcd 100%);
-  display:grid;
-  place-items:center;
-  position:relative;
-  z-index:2;
-  box-shadow:0 8px 24px rgba(90,58,46,0.16);
-}
-.timeline-node strong{
-  font-family:'Playfair Display',serif;
-  font-size:20px;
-  color:var(--wine);
-  font-weight:500;
+  gap:0;
+  justify-items:center;
+  width:100%;
 }
 .timeline-card{
   width:min(460px,100%);
+  margin:0 auto;
   border:1px solid var(--line);
   border-radius:22px;
   overflow:hidden;
@@ -598,7 +570,7 @@ nav.scrolled .nav-links a{color:var(--muted);}
   border-radius:18px;
   overflow:hidden;
   border:1px solid rgba(90,58,46,.14);
-  background:#fff;
+  background:#f7eadf;
   position:relative;
   min-height:220px;
   box-shadow:0 16px 34px rgba(90,58,46,.1);
@@ -606,24 +578,46 @@ nav.scrolled .nav-links a{color:var(--muted);}
 .gal-item:nth-child(3n+1){min-height:280px;}
 .gal-item:nth-child(3n+2){min-height:220px;}
 .gal-item:nth-child(3n+3){min-height:250px;}
-.gal-ph{
+.gal-img{
+  width:100%;
   height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  text-align:center;
-  background:
-    linear-gradient(150deg,rgba(249,232,219,.95),rgba(242,213,200,.85)),
-    repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0,rgba(255,255,255,.35) 12px,rgba(255,255,255,.1) 12px,rgba(255,255,255,.1) 24px);
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(0.94) contrast(1.04) brightness(1.01);
+  transform:scale(1.04);
+  transition:transform .5s ease;
 }
-.gal-ph svg{width:28px;height:28px;color:var(--wine);opacity:.45;}
-.gal-ph p{margin-top:8px;color:var(--wine);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;}
+.gal-item:hover .gal-img{transform:scale(1.08);}
+.gal-item::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,252,245,.35),transparent 36%),
+    linear-gradient(170deg,rgba(173,94,66,.2),rgba(246,220,194,.08) 45%,rgba(106,63,45,.25));
+  mix-blend-mode:soft-light;
+  pointer-events:none;
+  z-index:1;
+}
+.gal-item::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  box-shadow:inset 0 -60px 80px rgba(58,28,23,.24);
+  pointer-events:none;
+  z-index:2;
+}
+.gal-item-couple .gal-img{
+  object-position:60% 36%;
+  transform:scale(1.42);
+}
+.gal-item-couple:hover .gal-img{transform:scale(1.46);}
 .gal-overlay{
   position:absolute;
   inset:auto 0 0 0;
   padding:12px 14px;
   background:linear-gradient(180deg,transparent,rgba(74,33,27,.58));
+  z-index:3;
 }
 .gal-overlay span{color:rgba(255,250,245,.94);font-size:16px;font-family:'Cormorant Garamond',serif;font-style:italic;}
 
@@ -772,8 +766,8 @@ footer::before{
   <div class="wrap">
     <div class="events-head rv">
       <p class="eyebrow">Wedding Celebrations</p>
-      <h2 class="section-title">Every event, one unforgettable story</h2>
-      <p class="events-sub">From warm haldi moments to sacred vows and joyful reception, we invite you to celebrate each chapter with us.</p>
+      <h2 class="section-title">One unforgettable wedding story</h2>
+      <p class="events-sub">Join us for the wedding and celebration, centered around one beautiful afternoon together.</p>
       <div class="divider" aria-hidden="true">
         <div class="divider-line"></div>
         <div class="divider-dot"></div>
@@ -784,41 +778,15 @@ footer::before{
     <div class="events-timeline">
       <article class="timeline-item rv d1">
         <div class="timeline-card" data-event-card>
-          <div class="event-visual ev-haldi">
-            <div class="ev-token" aria-hidden="true">Haldi</div>
-            <span class="event-label">Evening Celebration</span>
-          </div>
-          <div class="event-body">
-            <h3 class="event-name">Haldi</h3>
-            <div class="event-meta">
-              <p><strong>Date:</strong> Saturday, 2nd May 2026</p>
-              <p><strong>Time:</strong> 7:00 PM onwards</p>
-              <p><strong>Venue:</strong> Nigudgi Function Hall, Kalaburagi</p>
-            </div>
-            <button class="timeline-toggle" type="button" aria-expanded="false" aria-controls="event-haldi-details">
-              Tap to view details
-              <span class="toggle-icon" aria-hidden="true"></span>
-            </button>
-            <div class="event-extra" id="event-haldi-details">
-              <p>Please arrive 20 minutes early so family rituals can begin on time. Traditional yellow or warm festive tones are perfect for this evening.</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-node" aria-hidden="true"><strong>01</strong></div>
-      </article>
-
-      <article class="timeline-item rv d2">
-        <div class="timeline-node" aria-hidden="true"><strong>02</strong></div>
-        <div class="timeline-card" data-event-card>
-          <div class="event-visual ev-wedding">
-            <div class="ev-token" aria-hidden="true">Vows</div>
-            <span class="event-label">Morning Ceremony</span>
+          <div class="event-visual ev-reception">
+            <div class="ev-token" aria-hidden="true">Love</div>
+            <span class="event-label">Main Ceremony</span>
           </div>
           <div class="event-body">
             <h3 class="event-name">Wedding</h3>
             <div class="event-meta">
               <p><strong>Date:</strong> Sunday, 3rd May 2026</p>
-              <p><strong>Time:</strong> 8:00 AM onwards</p>
+              <p><strong>Time:</strong> 12:25 PM onwards</p>
               <p><strong>Venue:</strong> Nigudgi Function Hall, Kalaburagi</p>
             </div>
             <button class="timeline-toggle" type="button" aria-expanded="false" aria-controls="event-wedding-details">
@@ -826,35 +794,10 @@ footer::before{
               <span class="toggle-icon" aria-hidden="true"></span>
             </button>
             <div class="event-extra" id="event-wedding-details">
-              <p>The main ceremony starts in the morning with blessings and sacred rituals. Kindly keep your phone on silent during the vows and prayer moments.</p>
+              <p>Please arrive a little early so the wedding ceremony can begin on time. Traditional festive attire is perfect for this afternoon.</p>
             </div>
           </div>
         </div>
-      </article>
-
-      <article class="timeline-item rv d3">
-        <div class="timeline-card" data-event-card>
-          <div class="event-visual ev-reception">
-            <div class="ev-token" aria-hidden="true">Cheers</div>
-            <span class="event-label">Afternoon Celebration</span>
-          </div>
-          <div class="event-body">
-            <h3 class="event-name">Reception</h3>
-            <div class="event-meta">
-              <p><strong>Date:</strong> Sunday, 3rd May 2026</p>
-              <p><strong>Time:</strong> 12:30 PM onwards</p>
-              <p><strong>Venue:</strong> Nigudgi Function Hall, Kalaburagi</p>
-            </div>
-            <button class="timeline-toggle" type="button" aria-expanded="false" aria-controls="event-reception-details">
-              Tap to view details
-              <span class="toggle-icon" aria-hidden="true"></span>
-            </button>
-            <div class="event-extra" id="event-reception-details">
-              <p>Join us for lunch, blessings, and celebration portraits. This is the best time for family photos and relaxed conversations with the couple.</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-node" aria-hidden="true"><strong>03</strong></div>
       </article>
     </div>
   </div>
@@ -889,9 +832,7 @@ footer::before{
         <p class="venue-name">Nigudgi Function Hall</p>
         <p class="venue-addr">Nigudgi, Kalaburagi<br>Karnataka, India</p>
         <ul class="sched">
-          <li><span class="sched-dot dot-h"></span><div class="sched-info"><strong>Haldi</strong><span>Saturday, 2nd May 2026 · 7:00 PM</span></div></li>
-          <li><span class="sched-dot dot-w"></span><div class="sched-info"><strong>Wedding</strong><span>Sunday, 3rd May 2026 · 8:00 AM</span></div></li>
-          <li><span class="sched-dot dot-r"></span><div class="sched-info"><strong>Reception</strong><span>Sunday, 3rd May 2026 · 12:30 PM</span></div></li>
+          <li><span class="sched-dot dot-r"></span><div class="sched-info"><strong>Wedding</strong><span>Sunday, 3rd May 2026 · 12:25 PM</span></div></li>
         </ul>
         <a class="dir-btn" href="https://maps.app.goo.gl/q7aTXb2jDeiaULNm7" target="_blank" rel="noopener">Get Directions</a>
       </div>
@@ -904,15 +845,29 @@ footer::before{
     <div class="rv">
       <p class="eyebrow">Moments</p>
       <h2 class="section-title">A glimpse of us</h2>
-      <p class="gal-sub">Premium placeholders ready for your final photos</p>
+      <p class="gal-sub">Five frames from our celebration, blended with the warmth of the day</p>
     </div>
     <div class="gal-grid rv d1">
-      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Together</p></div></div><div class="gal-overlay"><span>Golden Hour</span></div></div>
-      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Forever</p></div></div><div class="gal-overlay"><span>Engagement Bliss</span></div></div>
-      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Always</p></div></div><div class="gal-overlay"><span>Our Promise</span></div></div>
-      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Joy</p></div></div><div class="gal-overlay"><span>Warm Smiles</span></div></div>
-      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Love</p></div></div><div class="gal-overlay"><span>Heart Notes</span></div></div>
-      <div class="gal-item"><div class="gal-ph"><div><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/></svg><p>Story</p></div></div><div class="gal-overlay"><span>New Chapter</span></div></div>
+      <figure class="gal-item">
+        <img src="image1.jpeg" alt="Ratnaveni and Pradeep smiling together" class="gal-img" loading="lazy">
+        <figcaption class="gal-overlay"><span>Golden Hour</span></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="image2.JPG" alt="Celebration moment of the couple" class="gal-img" loading="lazy">
+        <figcaption class="gal-overlay"><span>Engagement Bliss</span></figcaption>
+      </figure>
+      <figure class="gal-item gal-item-couple">
+        <img src="image3.JPG" alt="Couple portrait during the ceremony" class="gal-img" loading="lazy">
+        <figcaption class="gal-overlay"><span>Warm Smiles</span></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="image4.JPG" alt="Joyful candid shot" class="gal-img" loading="lazy">
+        <figcaption class="gal-overlay"><span>Our Promise</span></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="image5.JPG" alt="Romantic memory of the couple" class="gal-img" loading="lazy">
+        <figcaption class="gal-overlay"><span>New Chapter</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -921,7 +876,7 @@ footer::before{
   <div class="wrap">
     <p class="ft-names rv">Pradeep <span class="ft-amp">&amp;</span> Ratnaveni</p>
     <p class="ft-msg rv d1">With gratitude and joy, we look forward to celebrating our beginning with the people who mean the most to us.</p>
-    <p class="ft-date rv d2">2nd and 3rd May 2026 · Nigudgi Function Hall, Kalaburagi</p>
+    <p class="ft-date rv d2">3rd May 2026 · Nigudgi Function Hall, Kalaburagi</p>
   </div>
 </footer>
 
@@ -956,7 +911,7 @@ document.querySelectorAll('[data-event-card]').forEach((card) => {
   });
 });
 
-const TARGET = new Date('2026-05-03T08:00:00+05:30');
+const TARGET = new Date('2026-05-03T12:25:00+05:30');
 const pad = (n) => String(Math.max(0, Math.floor(n))).padStart(2, '0');
 function tick() {
   const diff = TARGET - Date.now();
