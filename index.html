@@ -674,14 +674,12 @@ footer::before{
   .hero-copy{order:2;text-align:center;}
   .hero-meta{justify-content:center;}
   .hero-photo{max-width:480px;margin:20px auto 0;}
-  .events-timeline::before{left:36px;}
-  .timeline-item{grid-template-columns:72px 1fr;gap:14px;}
-  .timeline-node{grid-column:1;width:72px;height:72px;}
+  .timeline-item{grid-template-columns:minmax(0,1fr);gap:0;}
   .timeline-card,
   .timeline-item:nth-child(odd) .timeline-card,
   .timeline-item:nth-child(even) .timeline-card{
-    grid-column:2;
-    justify-self:stretch;
+    grid-column:auto;
+    justify-self:center;
   }
   .venue-grid{grid-template-columns:1fr;}
   .map-wrap iframe{min-height:320px;}
