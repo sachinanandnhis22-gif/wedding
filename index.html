@@ -305,7 +305,11 @@ nav.scrolled .nav-links a{color:var(--muted);}
     radial-gradient(circle at 95% 5%,rgba(244,217,199,.35),transparent 33%),
     linear-gradient(180deg,#fffaf4 0%,#f8ebe0 100%);
 }
-.events-head{max-width:620px;}
+.events-head{
+  max-width:620px;
+  margin:0 auto;
+  text-align:center;
+}
 .events-sub{
   margin-top:16px;
   color:var(--muted);
@@ -317,6 +321,7 @@ nav.scrolled .nav-links a{color:var(--muted);}
   position:relative;
   display:grid;
   gap:28px;
+  align-items:center;
   justify-items:center;
 }
 .timeline-item{
@@ -324,6 +329,7 @@ nav.scrolled .nav-links a{color:var(--muted);}
   grid-template-columns:minmax(0,1fr);
   align-items:center;
   gap:0;
+  justify-content:center;
   justify-items:center;
   width:100%;
 }
